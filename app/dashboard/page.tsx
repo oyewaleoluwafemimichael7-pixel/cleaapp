@@ -176,9 +176,12 @@ Bank Name: Chase Bank
 
           <p className="text-black font-semibold mb-6">USD</p>
 
-          <button className="bg-black text-white py-3 rounded-lg w-full hover: transition">
-            Request Withdrawal
-          </button>
+          <Link
+  href="/dashboard/withdraw"
+  className="block text-center bg-black text-white py-3 rounded-lg w-full hover: transition"
+>
+  Request Withdrawal
+</Link>
         </div>
 
       </div>
