@@ -63,7 +63,7 @@ Bank Name: Chase Bank
         }`}
       >
         <div className="p-6 border-b flex justify-between items-center">
-          <h2 className="font-bold text-lg">CleaPay</h2>
+          <h2 className="font-bold text-black">CleaPay</h2>
           <X
             className="cursor-pointer"
             onClick={() => setSidebarOpen(false)}
