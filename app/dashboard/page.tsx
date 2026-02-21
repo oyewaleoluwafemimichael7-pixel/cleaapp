@@ -17,16 +17,13 @@ export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [authorized, setAuthorized] = useState(false);
 
-  // ✅ Stable auth check
+  // Authentication check
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const loggedIn = localStorage.getItem("loggedIn");
-
-      if (loggedIn === "true") {
-        setAuthorized(true);
-      } else {
-        router.replace("/");
-      }
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn === "true") {
+      setAuthorized(true);
+    } else {
+      router.replace("/");
     }
   }, [router]);
 
@@ -54,7 +51,7 @@ Bank Name: Chase Bank
       {/* Overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40"
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -74,19 +71,36 @@ Bank Name: Chase Bank
         </div>
 
         <div className="p-6 space-y-6">
-          <Link href="/dashboard" className="flex items-center gap-3 hover:text-black-700">
+
+          <Link
+            href="/dashboard"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 hover:text-gray-700"
+          >
             <Home size={18} /> Dashboard
           </Link>
 
-          <Link href="/dashboard/withdraw" className="flex items-center gap-3 hover:text-black-700">
+          <Link
+            href="/dashboard/withdraw"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 hover:text-gray-700"
+          >
             <Wallet size={18} /> Withdraw
           </Link>
 
-          <Link href="/dashboard/settlement" className="flex items-center gap-3 hover:text-black-700">
+          <Link
+            href="/dashboard/settlement"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 hover:text-gray-700"
+          >
             <DollarSign size={18} /> Settlement
           </Link>
 
-          <Link href="/dashboard/settings" className="flex items-center gap-3 hover:text-black-700">
+          <Link
+            href="/dashboard/settings"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 hover:text-gray-700"
+          >
             <Settings size={18} /> Settings
           </Link>
         </div>
@@ -94,7 +108,7 @@ Bank Name: Chase Bank
         <div className="absolute bottom-6 left-6">
           <button
             onClick={handleLogout}
-            className="text-red-500 font-bold"
+            className="text-red-600 font-semibold"
           >
             Logout
           </button>
@@ -107,45 +121,62 @@ Bank Name: Chase Bank
           className="cursor-pointer"
           onClick={() => setSidebarOpen(true)}
         />
-        <h1 className="font-semibold">Hi, GORBUNOVS</h1>
-        <div className="font-bold">CleaPay</div>
+        <h1 className="font-semibold text-black">Hi, GORBUNOVS</h1>
+        <div className="font-bold text-black">CleaPay</div>
       </div>
 
       {/* Content */}
       <div className="p-6 space-y-6">
 
-        <div className="bg-white p-6 rounded-2xl shadow space-y-3">
+        {/* Account Details Card */}
+        <div className="bg-white p-6 rounded-2xl shadow space-y-4">
           <h2 className="text-lg font-bold text-black">
             USD Account Details
           </h2>
 
-          <div className="text-gray-700 space-y-1">
-            <p><strong>Account Name:</strong> Torven LLC</p>
-            <p><strong>Account Number:</strong> 10148100290685</p>
-            <p><strong>Routing Number:</strong> 021000021</p>
-            <p><strong>Account Type:</strong> Checking</p>
-            <p><strong>Bank Name:</strong> Chase Bank</p>
+          <div className="space-y-2 text-black">
+            <p className="font-semibold">
+              Account Name: <span className="font-bold">Torven LLC</span>
+            </p>
+
+            <p className="font-semibold">
+              Account Number: <span className="font-bold">10148100290685</span>
+            </p>
+
+            <p className="font-semibold">
+              Routing Number: <span className="font-bold">021000021</span>
+            </p>
+
+            <p className="font-semibold">
+              Account Type: <span className="font-bold">Checking</span>
+            </p>
+
+            <p className="font-semibold">
+              Bank Name: <span className="font-bold">Chase Bank</span>
+            </p>
           </div>
 
           <button
             onClick={copyDetails}
-            className="mt-4 border px-4 py-2 rounded-lg hover:bg-black-500"
+            className="mt-4 border px-4 py-2 rounded-lg hover:bg-gray-200 transition"
           >
             Copy All Details
           </button>
         </div>
 
+        {/* Wallet Card */}
         <div className="bg-white p-6 rounded-2xl shadow">
           <h2 className="text-lg font-bold text-black">
             Wallet Balance
           </h2>
 
-          <p className="text-4xl font-bold mt-4">
-            $85000.91
+          <p className="text-4xl font-bold mt-4 text-black">
+            $85,000.91
           </p>
-          <p className="text-gray-700 mb-6">USD</p>
 
-          <button className="bg-black text-white py-3 rounded-lg w-full hover:opacity-90">
+          <p className="text-black font-semibold mb-6">USD</p>
+
+          <button className="bg-black text-white py-3 rounded-lg w-full hover:opacity-90 transition">
             Request Withdrawal
           </button>
         </div>
