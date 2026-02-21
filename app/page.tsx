@@ -11,7 +11,7 @@ export default function Login() {
   const [error, setError] = useState("");
 
   // Demo credentials (change to anything you want)
-  const VALID_EMAIL = "admin@cleapay.com";
+  const VALID_EMAIL = "richardthompson@gmail.com";
   const VALID_PASSWORD = "Password123";
 
   function handleLogin() {
