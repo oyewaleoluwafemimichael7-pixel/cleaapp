@@ -27,26 +27,35 @@ export default function SettlementPage() {
   ];
 
   return (
-    <div className="p-6 space-y-6 bg-gray-100 min-h-screen">
+    <div className="p-6 space-y-6 bg-gray-100 min-h-screen text-black">
+
+      {/* Page Header */}
       <div>
-        <h1 className="text-2xl font-bold">Settlement</h1>
-        <p className="text-gray-500">
+        <h1 className="text-2xl font-bold text-black">
+          Settlement
+        </h1>
+        <p className="text-gray-700 font-medium">
           View your withdrawal history and settlements
         </p>
       </div>
 
+      {/* Card */}
       <div className="bg-white rounded-2xl shadow p-6">
-        <h2 className="text-xl font-semibold mb-2">
+
+        <h2 className="text-xl font-bold text-black mb-2">
           Withdrawal History
         </h2>
-        <p className="text-gray-500 mb-6">
+
+        <p className="text-gray-700 font-medium mb-6">
           Track all your withdrawal requests and their status
         </p>
 
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm">
-            <thead className="border-b text-gray-600">
-              <tr className="text-left">
+          <table className="min-w-full text-sm text-black">
+
+            {/* Table Header */}
+            <thead className="border-b border-gray-300">
+              <tr className="text-left font-semibold text-black">
                 <th className="py-3 pr-6">Date</th>
                 <th className="py-3 pr-6">Amount</th>
                 <th className="py-3 pr-6">Fee</th>
@@ -58,31 +67,47 @@ export default function SettlementPage() {
               </tr>
             </thead>
 
+            {/* Table Body */}
             <tbody>
               {withdrawals.map((item) => (
                 <tr
                   key={item.id}
-                  className="border-b hover:bg-gray-50 transition"
+                  className="border-b border-gray-200 hover:bg-gray-100 transition"
                 >
-                  <td className="py-4 pr-6">{item.date}</td>
-                  <td className="py-4 pr-6">
+                  <td className="py-4 pr-6 font-medium">
+                    {item.date}
+                  </td>
+
+                  <td className="py-4 pr-6 font-semibold">
                     ₦{item.amount.toLocaleString()}
                   </td>
-                  <td className="py-4 pr-6 text-red-500">
+
+                  <td className="py-4 pr-6 font-semibold text-red-600">
                     ₦{item.fee.toLocaleString()}
                   </td>
-                  <td className="py-4 pr-6 font-medium">
+
+                  <td className="py-4 pr-6 font-bold">
                     ₦{item.payout.toLocaleString()}
                   </td>
-                  <td className="py-4 pr-6">{item.bank}</td>
-                  <td className="py-4 pr-6">{item.accountNumber}</td>
-                  <td className="py-4 pr-6">{item.accountName}</td>
+
+                  <td className="py-4 pr-6 font-medium">
+                    {item.bank}
+                  </td>
+
+                  <td className="py-4 pr-6 font-medium">
+                    {item.accountNumber}
+                  </td>
+
+                  <td className="py-4 pr-6 font-semibold">
+                    {item.accountName}
+                  </td>
+
                   <td className="py-4 pr-6">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         item.status === "completed"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-600"
+                          ? "bg-green-600 text-white"
+                          : "bg-red-600 text-white"
                       }`}
                     >
                       {item.status}
@@ -91,6 +116,7 @@ export default function SettlementPage() {
                 </tr>
               ))}
             </tbody>
+
           </table>
         </div>
       </div>
