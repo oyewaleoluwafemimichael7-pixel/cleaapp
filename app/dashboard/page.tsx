@@ -83,7 +83,7 @@ Bank Name: Chase Bank
           <Link
             href="/dashboard/withdraw"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 hover:text-gray-700"
+            className="flex items-center gap-3 text-black hover:text-gray-900"
           >
             <Wallet size={18} /> Withdraw
           </Link>
@@ -99,7 +99,7 @@ Bank Name: Chase Bank
           <Link
             href="/dashboard/settings"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 text black hover:text-gray-900"
+            className="flex items-center gap-3 text-black hover:text-gray-900"
           >
             <Settings size={18} /> Settings
           </Link>
