@@ -50,13 +50,17 @@ export default function ProfileSettings() {
   }
 
   return (
-    <div className={`min-h-screen p-6 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100"}`}>
+    <div
+  className={`min-h-screen p-6 ${
+    darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+  }`}
+>
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow p-8 space-y-8">
 
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold">Profile Settings</h1>
-          <p className="text-gray-500">
+          <p className={darkMode ? "text-gray-300" : "text-gray-600"}>
             Manage your personal information and security settings
           </p>
         </div>
@@ -80,7 +84,7 @@ export default function ProfileSettings() {
               onChange={handleAvatarChange}
               className="mb-2"
             />
-            <p className="text-sm text-gray-500">
+            <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
               Upload profile picture
             </p>
           </div>
