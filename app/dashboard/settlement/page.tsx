@@ -79,15 +79,15 @@ export default function SettlementPage() {
                   </td>
 
                   <td className="py-4 pr-6 font-semibold">
-                    ₦{item.amount.toLocaleString()}
+                    ${item.amount.toLocaleString()}
                   </td>
 
                   <td className="py-4 pr-6 font-semibold text-red-600">
-                    ₦{item.fee.toLocaleString()}
+                    ${item.fee.toLocaleString()}
                   </td>
 
                   <td className="py-4 pr-6 font-bold">
-                    ₦{item.payout.toLocaleString()}
+                    ${item.payout.toLocaleString()}
                   </td>
 
                   <td className="py-4 pr-6 font-medium">
