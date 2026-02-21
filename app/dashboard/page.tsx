@@ -75,7 +75,7 @@ Bank Name: Chase Bank
           <Link
             href="/dashboard"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 hover:text-gray-700"
+            className="flex items-center gap-3 text-black hover:text-gray-900"
           >
             <Home size={18} /> Dashboard
           </Link>
@@ -91,7 +91,7 @@ Bank Name: Chase Bank
           <Link
             href="/dashboard/settlement"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 hover:text-gray-700"
+            className="flex items-center gap-3 text-black hover:text-gray-900"
           >
             <DollarSign size={18} /> Settlement
           </Link>
@@ -99,7 +99,7 @@ Bank Name: Chase Bank
           <Link
             href="/dashboard/settings"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 hover:text-gray-700"
+            className="flex items-center gap-3 text black hover:text-gray-900"
           >
             <Settings size={18} /> Settings
           </Link>
@@ -118,7 +118,7 @@ Bank Name: Chase Bank
       {/* Top Bar */}
       <div className="flex items-center justify-between p-6 bg-white shadow">
         <Menu
-          className="cursor-pointer"
+          className="cursor-pointer text-black"
           onClick={() => setSidebarOpen(true)}
         />
         <h1 className="font-semibold text-black">Hi, GORBUNOVS</h1>
@@ -126,7 +126,7 @@ Bank Name: Chase Bank
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6 text-black">
 
         {/* Account Details Card */}
         <div className="bg-white p-6 rounded-2xl shadow space-y-4">
@@ -158,7 +158,7 @@ Bank Name: Chase Bank
 
           <button
             onClick={copyDetails}
-            className="mt-4 border px-4 py-2 rounded-lg hover:bg-gray-200 transition"
+            className="mt-4 border border-black text-black font-semibold px-4 py-2 rounded-lg hover:bg-gray-200 transition"
           >
             Copy All Details
           </button>
@@ -176,7 +176,7 @@ Bank Name: Chase Bank
 
           <p className="text-black font-semibold mb-6">USD</p>
 
-          <button className="bg-black text-white py-3 rounded-lg w-full hover:opacity-90 transition">
+          <button className="bg-black text-white py-3 rounded-lg w-full hover: transition">
             Request Withdrawal
           </button>
         </div>
