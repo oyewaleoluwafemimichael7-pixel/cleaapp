@@ -74,19 +74,19 @@ Bank Name: Chase Bank
         </div>
 
         <div className="p-6 space-y-6">
-          <Link href="/dashboard" className="flex items-center gap-3 hover:text-gray-500">
+          <Link href="/dashboard" className="flex items-center gap-3 hover:text-black-700">
             <Home size={18} /> Dashboard
           </Link>
 
-          <Link href="/dashboard/withdraw" className="flex items-center gap-3 hover:text-gray-500">
+          <Link href="/dashboard/withdraw" className="flex items-center gap-3 hover:text-black-700">
             <Wallet size={18} /> Withdraw
           </Link>
 
-          <Link href="/dashboard/settlement" className="flex items-center gap-3 hover:text-gray-500">
+          <Link href="/dashboard/settlement" className="flex items-center gap-3 hover:text-black-700">
             <DollarSign size={18} /> Settlement
           </Link>
 
-          <Link href="/dashboard/settings" className="flex items-center gap-3 hover:text-gray-500">
+          <Link href="/dashboard/settings" className="flex items-center gap-3 hover:text-black-700">
             <Settings size={18} /> Settings
           </Link>
         </div>
@@ -94,7 +94,7 @@ Bank Name: Chase Bank
         <div className="absolute bottom-6 left-6">
           <button
             onClick={handleLogout}
-            className="text-red-500 font-semibold"
+            className="text-red-500 font-bold"
           >
             Logout
           </button>
@@ -115,7 +115,7 @@ Bank Name: Chase Bank
       <div className="p-6 space-y-6">
 
         <div className="bg-white p-6 rounded-2xl shadow space-y-3">
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-lg font-bold text-black">
             USD Account Details
           </h2>
 
@@ -129,21 +129,21 @@ Bank Name: Chase Bank
 
           <button
             onClick={copyDetails}
-            className="mt-4 border px-4 py-2 rounded-lg hover:bg-gray-100"
+            className="mt-4 border px-4 py-2 rounded-lg hover:bg-black-500"
           >
             Copy All Details
           </button>
         </div>
 
         <div className="bg-white p-6 rounded-2xl shadow">
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-lg font-bold text-black">
             Wallet Balance
           </h2>
 
           <p className="text-4xl font-bold mt-4">
             $85000.91
           </p>
-          <p className="text-gray-500 mb-6">USD</p>
+          <p className="text-gray-700 mb-6">USD</p>
 
           <button className="bg-black text-white py-3 rounded-lg w-full hover:opacity-90">
             Request Withdrawal
