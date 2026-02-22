@@ -10,13 +10,32 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Demo credentials (change to anything you want)
-  const VALID_EMAIL = "richardthompson@gmail.com";
-  const VALID_PASSWORD = "Password123";
+  // ✅ Add multiple valid users here
+  const USERS = [
+    {
+      email: "richardthompson@gmail.com",
+      password: "Password123",
+    },
+    {
+      email: "brandeefloyd90@gmail.com",
+      password: "Trial20",
+    },
+    {
+      email: "user@cleapay.com",
+      password: "User789",
+    },
+  ];
 
   function handleLogin() {
-    if (email === VALID_EMAIL && password === VALID_PASSWORD) {
+    const validUser = USERS.find(
+      (user) =>
+        user.email === email.trim() &&
+        user.password === password.trim()
+    );
+
+    if (validUser) {
       localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("userEmail", validUser.email);
       setError("");
       router.push("/dashboard");
     } else {
@@ -30,15 +49,14 @@ export default function Login() {
       <div className="bg-white p-8 rounded-2xl shadow-lg w-96 text-black">
 
         <div className="text-center mb-6">
-  <h1 className="text-2xl font-bold text-black">
-    Welcome to CleaPay
-  </h1>
-  <p className="text-gray-700 mt-2 font-medium">
-    Enter your credentials to access your account
-  </p>
-</div>
+          <h1 className="text-2xl font-bold">
+            Welcome to CleaPay
+          </h1>
+          <p className="text-gray-700 mt-2">
+            Enter your credentials to access your account
+          </p>
+        </div>
 
-        {/* Error Message */}
         {error && (
           <div className="mb-4 text-red-600 font-semibold text-sm text-center">
             {error}
@@ -50,7 +68,7 @@ export default function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-4 p-3 border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-black"
+          className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
         />
 
         <input
@@ -58,7 +76,7 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full mb-6 p-3 border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-black"
+          className="w-full mb-6 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
         />
 
         <button
