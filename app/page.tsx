@@ -29,9 +29,14 @@ export default function Login() {
 
       <div className="bg-white p-8 rounded-2xl shadow-lg w-96 text-black">
 
-        <h1 className="text-2xl font-bold mb-6 text-center">
-          CleaPay Login
-        </h1>
+        <div className="text-center mb-6">
+  <h1 className="text-2xl font-bold text-black">
+    Welcome to CleaPay
+  </h1>
+  <p className="text-gray-700 mt-2 font-medium">
+    Enter your credentials to access your account
+  </p>
+</div>
 
         {/* Error Message */}
         {error && (
