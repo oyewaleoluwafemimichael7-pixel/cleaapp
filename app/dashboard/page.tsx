@@ -129,40 +129,63 @@ Bank Name: Chase Bank
       <div className="p-6 space-y-6 text-black">
 
         {/* Account Details Card */}
-        <div className="bg-white p-6 rounded-2xl shadow space-y-4">
-          <h2 className="text-lg font-bold text-black">
-            USD Account Details
-          </h2>
+        <div className="bg-white p-6 rounded-2xl shadow space-y-4 text-black">
 
-          <div className="space-y-2 text-black">
-            <p className="font-semibold">
-              Account Name: <span className="font-bold">Torven LLC</span>
-            </p>
+  <h2 className="text-lg font-bold text-black">
+    USD Account Details
+  </h2>
 
-            <p className="font-semibold">
-              Account Number: <span className="font-bold">10148100290685</span>
-            </p>
+  <div className="space-y-3 text-sm">
 
-            <p className="font-semibold">
-              Routing Number: <span className="font-bold">021000021</span>
-            </p>
+    <div>
+      <p className="text-gray-600">Account Name</p>
+      <p className="font-semibold">Torven LLC</p>
+    </div>
 
-            <p className="font-semibold">
-              Account Type: <span className="font-bold">Checking</span>
-            </p>
+    <div>
+      <p className="text-gray-600">Account Number</p>
+      <p className="font-semibold">10148100290685</p>
+    </div>
 
-            <p className="font-semibold">
-              Bank Name: <span className="font-bold">Chase Bank</span>
-            </p>
-          </div>
+    <div>
+      <p className="text-gray-600">Routing Number</p>
+      <p className="font-semibold">021000021</p>
+    </div>
 
-          <button
-            onClick={copyDetails}
-            className="mt-4 border border-black text-black font-semibold px-4 py-2 rounded-lg hover:bg-gray-200 transition"
-          >
-            Copy All Details
-          </button>
-        </div>
+    <div>
+      <p className="text-gray-600">Account Type</p>
+      <p className="font-semibold">Checking</p>
+    </div>
+
+    <div>
+      <p className="text-gray-600">Bank Name</p>
+      <p className="font-semibold">Chase Bank</p>
+    </div>
+
+    <div>
+      <p className="text-gray-600">Bank Address</p>
+      <p className="font-semibold">
+        383 Madison Avenue, New York, NY 10179
+      </p>
+    </div>
+
+    <div>
+      <p className="text-gray-600">Beneficiary Address</p>
+      <p className="font-semibold">
+        5900 Balcones Drive Suite 100, Austin, TX 78731
+      </p>
+    </div>
+
+  </div>
+
+  <button
+    onClick={copyDetails}
+    className="mt-4 w-full border border-gray-300 py-3 rounded-lg font-medium hover:bg-gray-100 transition"
+  >
+    Copy All Details
+  </button>
+
+</div>
 
         {/* Wallet Card */}
         <div className="bg-white p-6 rounded-2xl shadow">
